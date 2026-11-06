@@ -1,26 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-      <main class="container contato-pagina">
-    <h1>Entrar</h1>
-    <p>Conta de teste: usuário <strong>aluno</strong> · senha <strong>bootcamp2026</strong></p>
 
-    <!-- Os mesmos ids do login da aula 4: o login.js funciona igual -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="topo">
+    <a href="index.html" class="topo"><span class="vermelho">D</span><span class="azul">a</span><span
+        class="amarelo">n</span><span class="verde">i</span><span class="vermelho">e</span><span
+        class="azul">l</span><span class="amarelo">.</span><span class="verde">D</span><span
+        class="vermelho">e</span><span class="azul">v</span></a>
+    <nav>
+      <button class="botao-tema" aria-label="Alternar tema da página">⚪</button>
+    </nav>
+    <button class="botao-menu" aria-label="Abrir menu" aria-expanded="false">☰</button>
+  </header>
+
+  <main class="container contato-pagina">
+    <h1>Entrar</h1>
+    <p>Digite seu usuário e sua senha para entrar.</p>
+
     <form class="formulario" id="form-login" novalidate>
       <div class="campo">
         <label for="usuario">Usuário</label>
         <input type="text" id="usuario" name="usuario" placeholder="Digite seu usuário">
       </div>
+
       <div class="campo">
         <label for="senha">Senha</label>
         <input type="password" id="senha" name="senha" placeholder="Digite sua senha">
       </div>
+
       <button type="submit" class="botao">Entrar</button>
       <p class="aviso" id="aviso" aria-live="polite"></p>
     </form>
@@ -34,7 +49,8 @@
 
 
 
-    <script src="layout.js"></script>
-    <script src="login.js"></script>
+  <script src="layout.js"></script>
+  <script src="login.js"></script>
 </body>
+
 </html>

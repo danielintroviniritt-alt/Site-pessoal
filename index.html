@@ -36,7 +36,7 @@
                     música
                     (toco guitarra), desenho e tenho grande interesse pela área de tecnologia e programação.
                 </p>
-                <img src="#" alt="Foto de Daniel">
+                <img id="fotoMinha" src="img/daniel.png" alt="Foto de Daniel" title="Foto do autor">
             </div>
             <div>
             </div>
@@ -45,16 +45,16 @@
         <section id="skills" class="container">
             <h2>Skills</h2>
             <div id="lSkill" class="coluna">
-                <article id="lista-front">
+                <article id="lista-front" class="cartao">
                     <h3>Front-end</h3>
                     <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaSript</li>
                     </ul>
+                    <p>Tive meu primeiro contato com programação no curso da BOOTCAMP 2026 do integrado
+                        e achei muito massa.
+                    </p>
                 </article>
-                <article class="cartao">
-                    <h3>Toco guitarra</h3>
+                <article id="lista-musica" class="cartao">
+                    <h3>Toco guitarra, baixo e violão</h3>
                     <div id="img-instrumentos">
                         <img class="aparece" src="img/guitarra.png" alt="Foto da guitarra" title="Foto de instrumento">
                         <img class="esconde" src="img/baixo.png" alt="Foto do baixo." title="Foto de instrumento">
@@ -64,7 +64,7 @@
                     <p>Comecei a tocar guitarra em 2023; hoje, participo de uma banda de repertório da escola Som Maior
                     </p>
                 </article>
-                <article class="cartao">
+                <article id="lista-desenho" class="cartao">
                     <h3>Desenho</h3>
                     <div id="img-desenhos">
                         <img class="aparece" src="img/desenho1.png" alt="Foto de desenhos" title="Foto de desenho">
@@ -74,7 +74,10 @@
                     </div>
                     <button type="button" class="botao" id="proximo-desenho">Próximo</button>
                     <p>Desenho desde sempre mas nunca fui atras de um curso</p>
-                    <p>Posto meus desenhos no meu Insta daniel.novo_picasso, segue la</p>
+                    <p>Posto meus desenhos no meu Insta <a href="https://www.instagram.com/daniel.novo_picasso/"
+                            target="_blank">
+                            daniel.novo_picasso
+                        </a>, segue la</p>
                 </article>
             </div>
         </section>
@@ -82,16 +85,13 @@
         <section id="projetos" class="container">
             <h2>Projetos</h2>
             <div class="coluna">
-                <article class="cartao" id="site-utilidades">
-                    <h3>Site de uso pessoal</h3>
-                    <p>Tem sites menores úteis</p>
-                    <img src="#" alt="Imagem do projeto">
-                    <a href="site-utilide.html" class="botao">Veja aqui</a>
-                </article>
-                <article class="cartao" id="calculadora">
-                    <h3>Calculadora teste</h3>
-                    <img src="#" alt="Imagem do projeto">
-                    <a href="calculadora.html" class="botao">Veja aqui</a>
+                <article class="cartao" id="transporte-escolar">
+                    <h3>Projeto de transporte escolar</h3>
+                    <p>Projeto desenvolvido em um trabalho esolar da diciplina de empreendedorismo que utilizei nas
+                        aulas de desing thinking da bootcamp</p>
+                    <img src="img/vans.png" alt="Imagem do projeto VANS" title="Projeto VANS">
+                    <a href="https://www.figma.com/design/2BQHTXSU5sFRY13VrjYg9S/Sem-t%C3%ADtulo?t=TJ9c0ImoStaYPecF-1"
+                        class="botao">Veja aqui</a>
                 </article>
                 <article class="cartao" id="siteBootcamp">
                     <h3>Site Pessoal</h3>
@@ -104,6 +104,12 @@
         <section id="contato" class="container">
             <h2>Contato</h2>
             <p>Gostou de algo? Vamos conversar!</p>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=danielintroviniritt@gmail.com" target="_blank">
+                danielintrovini@gmail.com
+            </a>
+            <a href="https://github.com/danielintroviniritt-alt" target="_blank">
+                Meu GitHub
+            </a>
             <a href="contato.html" class="botao">Enviar mensagem</a>
         </section>
     </main>

@@ -5,11 +5,6 @@ const contas = [
         nome: "Daniel",
     },
     {
-        usuario: "aline_fofinha",
-        senha: "aline123",
-        nome: "Aline"
-    },
-    {
         usuario: "alanakov",
         senha: "alana123",
         nome: "Alana",
@@ -21,51 +16,57 @@ const campoUsuario = document.querySelector("#usuario")
 const campoSenha = document.querySelector("#senha")
 const aviso = document.querySelector("#aviso")
 
-function validarUsuario (usuario){
-    if (usuario === ""){
-        return "Digite seu usuário."
-    } else if (usuario.length <= 3){
+function validarUsuario(usuario) {
+    if (usuario === "") {
+        console.log("Usuário vazio");
+        return "Digite seu usuário.";
+    } else if (usuario.length <= 3) {
+        console.log("Usuário com menos de 4 digitos");
         return "O usuário deve ter mais de 3 dígitos."
-    } else if(usuario.includes(" ")){
+    } else if (usuario.includes(" ")) {
+        console.log("usuario com espaço");
         return "O usuário não pode ter espaço."
-    } else {return ""}
+    } else { return "" }
 }
 
-function validarSenha (senha){
-    if(senha <= 3){
+function validarSenha(senha) {
+    if (senha <= 3) {
+        console.log("Senha com menos de 4 dígitos");
         return "A senha deve ter mais de 3 dígitos."
-    } else if(senha ===""){
+    } else if (senha === "") {
+        console.log("Senha vazia");
         return "Digite sua senha."
-    } else if(senha.includes(" ")){
+    } else if (senha.includes(" ")) {
+        console.log("Senha com espaço");
         return "A senha não pode ter espaço."
-    } else {return ""}
+    } else { return "" }
 }
 
-function procurarConta (usuario, senha){
-    for(const conta of contas){
-        if(conta.usuario === usuario && conta.senha === senha){
+function procurarConta(usuario, senha) {
+    for (const conta of contas) {
+        if (conta.usuario === usuario && conta.senha === senha) {
             return conta
         }
     }
     return null
 }
 
-function guardarLogin(conta){
+function guardarLogin(conta) {
     localStorage.setItem("usuarioLogado", conta.nome)
 }
 
-function mostrarAviso (texto, tipo){
+function mostrarAviso(texto, tipo) {
     aviso.textContent = texto
     aviso.classList.remove("erro")
     aviso.classList.remove("certo")
     aviso.classList.add(tipo)
 }
 
-function irParaInicio (){
+function irParaInicio() {
     window.location.href = "index.html"
 }
 
-function entrar (evento){
+function entrar(evento) {
     evento.preventDefault()
 
     const usuario = campoUsuario.value.trim()
@@ -75,11 +76,11 @@ function entrar (evento){
     const erroSenha = validarSenha(senha)
     const conta = procurarConta(usuario, senha)
 
-    if(erroUsuario !== ""){
+    if (erroUsuario !== "") {
         mostrarAviso(erroUsuario, "erro")
-    } else if(erroSenha !== ""){
+    } else if (erroSenha !== "") {
         mostrarAviso(erroSenha, "erro")
-    } else if(conta === null){
+    } else if (conta === null) {
         mostrarAviso("Usuário ou senha incorretos.", "erro")
     } else {
         guardarLogin(conta)

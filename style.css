@@ -148,6 +148,17 @@ header.topo {
   margin-left: 16px;
 }
 
+@media (max-width: 700px) {
+  main .paragrafo {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+#fotoMinha {
+  border-radius: 20%;
+}
+
 /* botao hamburguer em telas menores */
 .botao-menu {
   display: none;
@@ -251,8 +262,14 @@ header.topo {
   margin-bottom: 24px;
 }
 
+.cartao {
+  gap: 10px
+}
+
 .cartao,
 #lista-front {
+  display: flex;
+  flex-direction: column;
   background-color: var(--cor-fundo);
   border: 1px solid var(--cor-borda);
   border-radius: 8px;
@@ -292,15 +309,18 @@ header.topo {
 /* dimensoes padronizadas para as fotos de instrumentos e desenhos */
 #img-instrumentos,
 #img-desenhos {
-  display: grid;
-  height: 500px;
-  width: 200px;
+  display: flex;
+  position: relative;
+  height: 200px;
+  width: 100%;
   margin: 10px 0;
 }
 
 #img-instrumentos img,
 #img-desenhos img {
-  grid-area: 1 / 1;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -308,6 +328,22 @@ header.topo {
 }
 
 /* cartoes da secao de projetos */
+
+#projetos .coluna {
+  justify-content: center;
+  /* centraliza o grid */
+  grid-template-columns: repeat(2, minmax(250px, 1fr));
+  gap: 24px;
+  /* espaçamento entre os cartões */
+}
+
+@media (max-width: 700px) {
+  #projetos .coluna {
+    grid-template-columns: 1fr;
+    /* coluna única em telas pequenas */
+  }
+}
+
 #projetos .coluna {
   margin-bottom: 0;
 }
@@ -475,4 +511,40 @@ body,
 #img-instrumentos .esconde,
 #img-desenhos .esconde {
   opacity: 0;
+}
+
+/* =============================================================
+   Centralizar os dois cartões da seção Projetos
+   ============================================================= */
+#projetos .coluna {
+  justify-content: center;
+  /* centraliza o grid */
+  grid-template-columns: repeat(2, minmax(250px, 1fr));
+  gap: 24px;
+  /* espaçamento entre os cartões */
+}
+
+@media (max-width: 700px) {
+  #projetos .coluna {
+    grid-template-columns: 1fr;
+    /* coluna única em telas pequenas */
+  }
+}
+
+/* --------------------------------------------------------------
+   Espaçamento das listas geradas nas skills (front‑end, música, desenho)
+   -------------------------------------------------------------- */
+.cartao ul {
+    margin: 12px 0;         /* espaço acima e abaixo da lista */
+    padding-left: 20px;     /* já existia, reforçado para clareza */
+    color: var(--cor-texto-secundario);
+}
+
+/* --------------------------------------------------------------
+   Espaçamento das listas geradas nas skills (front‑end, música, desenho)
+   -------------------------------------------------------------- */
+.cartao ul {
+    margin: 12px 0;         /* espaço acima e abaixo da lista */
+    padding-left: 20px;     /* já existia, reforçado para clareza */
+    color: var(--cor-texto-secundario);
 }
