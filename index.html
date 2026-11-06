@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="topo">
+        <a class="topo"><span class="vermelho">D</span><span class="azul">a</span><span class="amarelo">n</span><span
+                class="verde">i</span><span class="vermelho">e</span><span class="azul">l</span><span
+                class="amarelo">.</span><span class="verde">D</span><span class="vermelho">e</span><span
+                class="azul">v</span></a>
+        <nav>
+            <a href="#sobre-mim">Sobre mim</a>
+            <a href="#skills">Skills</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#contato">Contato</a>
+            <a href="login.html">Sair</a>
+            <button class="botao-tema" aria-label="Alternar tema da página">⚪</button>
+        </nav>
+        <button class="botao-menu" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    </header>
+
+    <main>
+        <section id="sobre-mim" class="hero container">
+            <div class="hero-texto">
+                <h2>Bem-vindo ao meu Site-Pessoal!</h2>
+                <h1>Olá, meu nome é Daniel Ritt</h1>
+            </div>
+            <div class="paragrafo">
+                <p> Tenho 16 anos, sou estudante do 2º ano do ensino médio e moro em Campo Mourão. Sou apaixonado por
+                    música
+                    (toco guitarra), desenho e tenho grande interesse pela área de tecnologia e programação.
+                </p>
+                <img src="#" alt="Foto de Daniel">
+            </div>
+            <div>
+            </div>
+        </section>
+
+        <section id="skills" class="container">
+            <h2>Skills</h2>
+            <div id="lSkill" class="coluna">
+                <article id="lista-front">
+                    <h3>Front-end</h3>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaSript</li>
+                    </ul>
+                </article>
+                <article class="cartao">
+                    <h3>Toco guitarra</h3>
+                    <div id="img-instrumentos">
+                        <img class="aparece" src="img/guitarra.png" alt="Foto da guitarra" title="Foto de instrumento">
+                        <img class="esconde" src="img/baixo.png" alt="Foto do baixo." title="Foto de instrumento">
+                        <img class="esconde" src="img/violao.png" alt="Foto do violão." title="Foto de instrumento">
+                    </div>
+                    <button type="button" class="botao" id="proximo-instrumento">Próximo</button>
+                    <p>Comecei a tocar guitarra em 2023; hoje, participo de uma banda de repertório da escola Som Maior
+                    </p>
+                </article>
+                <article class="cartao">
+                    <h3>Desenho</h3>
+                    <div id="img-desenhos">
+                        <img class="aparece" src="img/desenho1.png" alt="Foto de desenhos" title="Foto de desenho">
+                        <img class="esconde" src="img/desenho2.png" alt="Foto de desenhos" title="Foto de desenho">
+                        <img class="esconde" src="img/desenho3.png" alt="Foto de desenhos" title="Foto de desenho">
+                        <img class="esconde" src="img/desenho4.png" alt="Foto de desenhos" title="Foto de desenho">
+                    </div>
+                    <button type="button" class="botao" id="proximo-desenho">Próximo</button>
+                    <p>Desenho desde sempre mas nunca fui atras de um curso</p>
+                    <p>Posto meus desenhos no meu Insta daniel.novo_picasso, segue la</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="projetos" class="container">
+            <h2>Projetos</h2>
+            <div class="coluna">
+                <article class="cartao" id="site-utilidades">
+                    <h3>Site de uso pessoal</h3>
+                    <p>Tem sites menores úteis</p>
+                    <img src="#" alt="Imagem do projeto">
+                    <a href="site-utilide.html" class="botao">Veja aqui</a>
+                </article>
+                <article class="cartao" id="calculadora">
+                    <h3>Calculadora teste</h3>
+                    <img src="#" alt="Imagem do projeto">
+                    <a href="calculadora.html" class="botao">Veja aqui</a>
+                </article>
+                <article class="cartao" id="siteBootcamp">
+                    <h3>Site Pessoal</h3>
+                    <p>É meu site pessoal (o próprio) para apresentar no bootcamp :)</p>
+                    <img src="img/site-pessoal.png" alt="Projeto Site pessoal" title="Projeto Site Pessoal">
+                </article>
+            </div>
+        </section>
+
+        <section id="contato" class="container">
+            <h2>Contato</h2>
+            <p>Gostou de algo? Vamos conversar!</p>
+            <a href="contato.html" class="botao">Enviar mensagem</a>
+        </section>
+    </main>
+
+
+    <footer class="rodape">
+        <h5>Daniel</h5>
+        <h6>Feito com HTML e CSS</h6>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="layout.js"></script>
+</body>
+
+</html>

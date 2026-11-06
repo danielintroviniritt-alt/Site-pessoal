@@ -1,0 +1,478 @@
+/* ==========================================
+   variaveis globais (design system)
+   ========================================== */
+:root {
+  /* cores principais: azul bem escuro, rosa (impacto) e branco */
+  --cor-fundo: #070d1e;
+  --cor-fundo-painel: #0d1730;
+  --cor-campo: #070d1e;
+  --cor-texto: #ffffff;
+  --cor-texto-secundario: #a0aec0;
+  --cor-destaque: #ff2a85;
+  --cor-borda: #1f2d52;
+}
+
+/* ==========================================
+   modo claro (tema van halen)
+   ========================================== */
+html.modo-claro,
+.modo-claro {
+  --cor-fundo: #faf7f7;
+  --cor-fundo-painel: #ffffff;
+  --cor-campo: #ffffff;
+  --cor-texto: #111827;
+  --cor-texto-secundario: #4b5563;
+  --cor-destaque: #d62828;
+  --cor-borda: #e5e7eb;
+}
+
+/* fundo com listras assimetricas estilo van halen */
+html.modo-claro body {
+  background-color: var(--cor-fundo);
+  background-image:
+    /* listra preta grossa diagonal forte */
+    linear-gradient(28deg, transparent 18%, rgba(17, 24, 39, 0.22) 18%, rgba(17, 24, 39, 0.22) 22%, transparent 22%),
+    /* listras vermelhas fortes e largas estilo fita */
+    linear-gradient(-48deg, transparent 12%, rgba(214, 40, 40, 0.28) 12%, rgba(214, 40, 40, 0.28) 18%, transparent 18%, transparent 40%, rgba(214, 40, 40, 0.35) 40%, rgba(214, 40, 40, 0.35) 48%, transparent 48%, transparent 74%, rgba(214, 40, 40, 0.20) 74%, rgba(214, 40, 40, 0.20) 77%, transparent 77%),
+    /* listra branca destacada cruzando */
+    linear-gradient(65deg, transparent 33%, rgba(255, 255, 255, 0.8) 33%, rgba(255, 255, 255, 0.8) 36%, transparent 36%),
+    /* listras pretas finas e inclinadas */
+    linear-gradient(115deg, transparent 27%, rgba(17, 24, 39, 0.24) 27%, rgba(17, 24, 39, 0.24) 29%, transparent 29%, transparent 68%, rgba(17, 24, 39, 0.16) 68%, rgba(17, 24, 39, 0.16) 71%, transparent 71%),
+    /* faixa transversal vermelha mais suave */
+    linear-gradient(-15deg, transparent 55%, rgba(214, 40, 40, 0.22) 55%, rgba(214, 40, 40, 0.22) 63%, transparent 63%),
+    /* fita preta aguda cortando a lateral */
+    linear-gradient(82deg, transparent 46%, rgba(17, 24, 39, 0.20) 46%, rgba(17, 24, 39, 0.20) 48%, transparent 48%);
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+/*GERAL*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* regra geral para imagens nao estourarem a largura da tela */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 820px;
+  width: calc(100% - 32px);
+  margin: 56px auto;
+  padding: 24px;
+  background-color: var(--cor-fundo-painel);
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: calc(100% - 24px);
+    padding: 16px;
+    margin: 36px auto;
+  }
+}
+
+/* cores do logotipo colorido */
+.vermelho {
+  color: #ea4335;
+}
+
+.azul {
+  color: #4285f4;
+}
+
+.amarelo {
+  color: #fbbc05;
+}
+
+.verde {
+  color: #34a853;
+}
+
+/*HEADER*/
+header.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--cor-fundo-painel);
+  color: var(--cor-texto);
+  border-bottom: 1px solid var(--cor-borda);
+  padding: 16px 24px;
+}
+
+.topo a {
+  color: var(--cor-texto);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.topo nav {
+  display: flex;
+  align-items: center;
+}
+
+.topo nav a {
+  color: var(--cor-texto-secundario);
+  margin-left: 16px;
+  font-weight: normal;
+}
+
+.botao-tema,
+.botao-menu {
+  background-color: transparent;
+  color: var(--cor-texto);
+  border: 1px solid var(--cor-borda);
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.botao-tema {
+  margin-left: 16px;
+}
+
+/* botao hamburguer em telas menores */
+.botao-menu {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  header.topo {
+    flex-wrap: wrap;
+    padding: 12px 16px;
+  }
+
+  .botao-menu {
+    display: block;
+  }
+
+  .topo nav {
+    margin-left: auto;
+    margin-right: 8px;
+  }
+
+  .topo nav a {
+    display: none;
+  }
+
+  .topo nav.menu-aberto {
+    order: 3;
+    width: 100%;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--cor-borda);
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .topo nav.menu-aberto a {
+    display: block;
+    margin: 8px 0;
+    margin-left: 0;
+  }
+
+  .topo nav.menu-aberto .botao-tema {
+    margin: 8px 0 0 0;
+  }
+}
+
+/*SEÇÃO SOBRE MIM*/
+.hero {
+  border-top: 10px solid var(--cor-destaque);
+}
+
+.hero-texto {
+  margin-bottom: 12px;
+}
+
+.hero-texto h2 {
+  color: var(--cor-destaque);
+  margin-bottom: 8px;
+}
+
+.hero-texto h1 {
+  color: var(--cor-texto);
+}
+
+.paragrafo {
+  display: flex;
+}
+
+.paragrafo p {
+  color: var(--cor-texto-secundario);
+}
+
+@media (max-width: 700px) {
+  .hero-texto h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-texto h2 {
+    font-size: 1.1rem;
+  }
+}
+
+/*SEÇÃO SKILLS, PROJETOS E CONTATO*/
+#skills h2,
+#projetos h2,
+#contato h2 {
+  color: var(--cor-destaque);
+  margin-bottom: 16px;
+}
+
+#contato {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.coluna {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.cartao,
+#lista-front {
+  background-color: var(--cor-fundo);
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  padding: 16px;
+  color: var(--cor-texto);
+}
+
+@media (max-width: 700px) {
+  .coluna {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cartao h3,
+#lista-front h3 {
+  color: var(--cor-texto);
+  margin-bottom: 8px;
+}
+
+.cartao p,
+#lista-front ul {
+  color: var(--cor-texto-secundario);
+}
+
+.cartao img {
+  max-width: 100%;
+  height: auto;
+  margin: 10px 0;
+  display: block;
+  border-radius: 4px;
+}
+
+#lista-front ul {
+  padding-left: 20px;
+}
+
+/* dimensoes padronizadas para as fotos de instrumentos e desenhos */
+#img-instrumentos,
+#img-desenhos {
+  display: grid;
+  height: 500px;
+  width: 200px;
+  margin: 10px 0;
+}
+
+#img-instrumentos img,
+#img-desenhos img {
+  grid-area: 1 / 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  margin: 0;
+}
+
+/* cartoes da secao de projetos */
+#projetos .coluna {
+  margin-bottom: 0;
+}
+
+#projetos .cartao {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+#projetos .cartao p {
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+#projetos .cartao .botao {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+/* botao de acao usado nos projetos, contato e login */
+.botao {
+  display: inline-block;
+  background-color: var(--cor-destaque);
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+/* ==========================================
+   formularios (contato e login)
+   ========================================== */
+.contato-pagina {
+  max-width: 650px;
+  border-top: 10px solid var(--cor-destaque);
+}
+
+.contato-pagina h1 {
+  color: var(--cor-destaque);
+  margin-bottom: 8px;
+}
+
+.contato-pagina p {
+  color: var(--cor-texto-secundario);
+  margin-bottom: 20px;
+}
+
+.formulario {
+  width: 100%;
+}
+
+.campo {
+  margin-bottom: 16px;
+}
+
+.campo label {
+  display: block;
+  color: var(--cor-texto);
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  width: 100%;
+  padding: 10px 12px;
+  background-color: var(--cor-campo);
+  color: var(--cor-texto);
+  border: 1px solid var(--cor-borda);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.aviso {
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+.aviso.erro {
+  color: #ef4444;
+}
+
+.aviso.certo {
+  color: #22c55e;
+}
+
+/* ==========================================
+   rodape
+   ========================================== */
+.rodape {
+  background-color: var(--cor-fundo-painel);
+  color: var(--cor-texto-secundario);
+  border-top: 1px solid var(--cor-borda);
+  text-align: center;
+  padding: 24px;
+  margin-top: 40px;
+}
+
+.rodape h5 {
+  color: var(--cor-destaque);
+  margin-bottom: 4px;
+}
+
+/* ==========================================
+   efeitos de hover e transicoes
+   ========================================== */
+body,
+.topo,
+.container,
+.cartao,
+#lista-front,
+.formulario,
+.campo input,
+.campo select,
+.campo textarea,
+.rodape {
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.topo nav a {
+  transition: color 0.2s;
+}
+
+.topo nav a:hover {
+  color: var(--cor-destaque);
+}
+
+.botao-tema,
+.botao-menu {
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.botao-tema:hover,
+.botao-menu:hover {
+  border-color: var(--cor-destaque);
+  color: var(--cor-destaque);
+}
+
+.botao {
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.botao:hover {
+  opacity: 0.9;
+}
+
+/* transicao de opacidade para instrumentos e desenhos */
+#img-instrumentos img,
+#img-desenhos img {
+  transition: opacity 0.5s;
+}
+
+#img-instrumentos .aparece,
+#img-desenhos .aparece {
+  opacity: 1;
+}
+
+#img-instrumentos .esconde,
+#img-desenhos .esconde {
+  opacity: 0;
+}
